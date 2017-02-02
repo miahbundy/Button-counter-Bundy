@@ -14,8 +14,7 @@ public class MainActivity extends AppCompatActivity {
     int counter = 0;
     int initSize;
     Integer num;
-
-    //warnings
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
