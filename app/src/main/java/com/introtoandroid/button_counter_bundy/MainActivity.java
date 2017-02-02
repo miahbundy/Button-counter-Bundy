@@ -11,9 +11,11 @@ import android.util.Log;
 public class MainActivity extends AppCompatActivity {
 
     TextView showValue;
+    TextView showIncreaseNum2;
     int counter = 0;
     int initSize;
     Integer num;
+    Integer increaseByNum = 1;
     
 
     @Override
@@ -23,15 +25,17 @@ public class MainActivity extends AppCompatActivity {
 
         showValue = (TextView) findViewById(R.id.counterValue);
         initSize = (int) showValue.getTextSize();
+        showIncreaseNum2 = (TextView) findViewById(R.id.textView2);
+
     }
 
     public void countIncrease(View view){
-        counter++;
+        counter = counter+increaseByNum;
         showValue.setText(Integer.toString(counter));
     }
 
     public void countDecrease(View view){
-        counter--;
+        counter = counter-increaseByNum;
         showValue.setText(Integer.toString(counter));
     }
 
@@ -40,6 +44,17 @@ public class MainActivity extends AppCompatActivity {
         showValue.setText(Integer.toString(counter));
     }
 
+    public void countByIncrease(View view){
+        increaseByNum++;
+        showIncreaseNum2.setText(Integer.toString(increaseByNum));
+    }
+
+    public void countByDecrease(View view){
+        if(increaseByNum > 1){
+            increaseByNum--;
+        }
+        showIncreaseNum2.setText(Integer.toString(increaseByNum));
+    }
 
     @Override
     public void onSaveInstanceState(Bundle outState){
