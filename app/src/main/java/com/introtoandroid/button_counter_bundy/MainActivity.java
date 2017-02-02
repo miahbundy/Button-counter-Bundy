@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     int initSize;
     Integer num;
     Integer increaseByNum = 1;
+    Integer incNum;
     
 
     @Override
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         //Log.i("Instance state", "onSaveInstanceState");
         outState.putInt("count", counter);
+        outState.putInt("countBy", increaseByNum);
     }
 
     @Override
@@ -69,5 +71,7 @@ public class MainActivity extends AppCompatActivity {
         //Log.i("Instance state", "onSaveInstanceState");
         num = savedInstanceState.getInt("count");
         showValue.setText(num.toString());
+        incNum = savedInstanceState.getInt("countBy");
+        showIncreaseNum2.setText(incNum.toString());
     }
 }
