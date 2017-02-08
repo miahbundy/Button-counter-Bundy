@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Integer num;
     Integer increaseByNum = 1;
     Integer incNum;
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,19 @@ public class MainActivity extends AppCompatActivity {
         showValue = (TextView) findViewById(R.id.counterValue);
         initSize = (int) showValue.getTextSize();
         showIncreaseNum2 = (TextView) findViewById(R.id.textView2);
+
+        if(savedInstanceState != null){
+            int bbb = savedInstanceState.getInt("count");
+            Log.d("State***", Integer.toString(bbb));
+            counter = bbb;
+
+            int cb = savedInstanceState.getInt("countBy");
+            Log.d("State***", Integer.toString(cb));
+            increaseByNum = cb;
+
+        }
+
+        Log.d("CREATION", "onCreate() is being executed");
 
     }
 
